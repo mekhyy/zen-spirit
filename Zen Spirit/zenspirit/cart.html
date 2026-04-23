@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zen Spirit | Contact Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <body>
+    <nav class="navbar sticky">
+        <div class="logo"><a href="index.html" style="text-decoration:none; color:inherit;">Zen Spirit</a></div>
+        <div class="cart-status">
+            <a href="cart.html" style="text-decoration:none; color:inherit;">
+                🛒 <span id="cart-count">0</span>
+            </a>
+        </div>
+    </nav>
+
+    <main class="cart-page-container" style="padding: 100px 10%; min-height: 70vh;">
+        <h1 style="font-family: 'Playfair Display', serif; margin-bottom: 40px;">Your Cart</h1>
+        
+        <div id="cart-display-area">
+            </div>
+
+        <div id="cart-summary-section" style="margin-top: 30px; display: none; border-top: 1px solid #ddd; padding-top: 20px;">
+            <h2 style="text-align: right;">Total: $<span id="cart-total-amount">0.00</span></h2>
+            <div style="display: flex; justify-content: flex-end; gap: 15px; margin-top: 20px;">
+                <button class="buy-btn" style="background:#888;" onclick="clearEntireCart()">Empty Cart</button>
+                <button class="buy-btn" onclick="processCheckout()">Checkout Now</button>
+            </div>
+        </div>
+        
+        <p style="margin-top: 40px;"><a href="index.html" style="color: #8A9A5B; font-weight: bold; text-decoration: none;">← Continue Shopping</a></p>
+    </main>
+
+ <script src="js/app.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof renderCartPage === 'function') {
+                renderCartPage();
+            } else {
+                console.error("The renderCartPage function was not found in app.js");
+            }
+        });
+    </script>
+</body>
+</html>

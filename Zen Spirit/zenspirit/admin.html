@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zen Spirit | Admin Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .admin-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .admin-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .admin-card h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .admin-subtitle {
+            text-align: center;
+            color: #777;
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+        }
+
+        .admin-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .admin-form label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #555;
+        }
+
+        .admin-form input, 
+        .admin-form select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .admin-form input:focus, 
+        .admin-form select:focus {
+            outline: none;
+            border-color: #8A9A5B; 
+        }
+
+        .admin-form small {
+            display: block;
+            margin-top: 5px;
+            color: #999;
+            font-size: 0.75rem;
+        }
+
+        .admin-footer {
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        .admin-footer a {
+            color: #8A9A5B;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .admin-footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="admin-container">
+        <div class="admin-card">
+            <h2>Product Uploader</h2>
+            <p class="admin-subtitle">Update your store's inventory</p>
+
+            <form action="api/add_product.php" method="POST" class="admin-form">
+                <div class="form-group">
+                    <label>Product Name</label>
+                    <input type="text" name="name" placeholder="e.g. Silk Yoga Wrap" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Category</label>
+                    <select name="category" required>
+                        <option value="Clothes">Clothes</option>
+                        <option value="Mats">Mats</option>
+                        <option value="Supplements">Supplements</option>
+                        <option value="Incenses">Incenses</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Price ($)</label>
+                    <input type="number" step="0.01" name="price" placeholder="0.00" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Image Path</label>
+                    <input type="text" name="image" placeholder="folder/image.jpg" required>
+                    <small>Example: clothes/burgundy.jpg</small>
+                </div>
+
+                <button type="submit" class="buy-btn" style="width: 100%; padding: 15px;">
+                    Add to Inventory
+                </button>
+            </form>
+
+            <div class="admin-footer">
+                <a href="index.html">← Back to Zen Spirit Shop</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
